@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box form-box">
+            <header>Login</header>
+            <form id="login-form" action="" method="POST">
+                <div class="field input">
+                    <label for="login">Login</label>
+                    <input type="text" name="login" id="login" autocomplete="on" required>
+                </div>
+
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="on" required>
+                </div>
+
+                <div class="field">
+                    <input type="submit" class="btn" name="submit" value="Login" required>
+                </div>
+                <div class="links">
+                    <input name="remember" type="checkbox" value="1"> Remember Me <br><br>
+                </div>
+                <div class="links">
+                    Don't have account? <a href="register.html">Sign Up Now</a>
+                </div>
+                <div class="links">
+                    <a href="../../../index.html">Return to home page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#login-form").submit(function (e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    url: "../../../server/login.php",
+                    type: "POST",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    mode: 'no-cors',
+                    success: function (data) {
+                        if (data == "user") {
+                            window.location.href = "../../../index.html";
+                        } else if (data == "admin") {
+                            window.location.href = "../../../server/dashboard/index.php";
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred while processing your request.");
+                    }
+                });
+            });
+        });
+
+        // $.ajax({
+        //     url: "http://localhost/ecommerce-pfe/server/session_cookie_checker.php",
+        //     type: "GET",
+        //     dataType: "json",
+        //     success: function (data) {
+        //         if (data === "user") {
+        //             document.location.href = "../../../index.html";
+        //             console.log("User is logged in");
+        //         } else if (data === "admin") {
+        //             document.location.href = "../../../server/dashboard/index.php";
+        //             console.log("Admin is logged in");
+        //         } else {
+        //             // No user or admin is logged in
+        //             console.log("No user or admin is logged in");
+        //         }
+        //     },
+        //     error: function (jqXHR, textStatus, errorThrown) {
+        //         console.log("Error checking session/cookie status: " + textStatus);
+        //     }
+        // });
+
+
+    </script>
+</body>
+
+</html>

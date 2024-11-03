@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/contact.css">
+   <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon"> 
+<!-- script ajax  -->
+
+
+</head>
+<body>
+  <header>
+    <container class="div">
+<ul>
+  <li> 
+     <a href="http://localhost/ecommerce-pfe/index.html" class="logo">
+      <div class="images">
+        <!-- <img src="./image/logo.svg"  class="logo-forDark" alt="image">
+        <img src="./image/watch.svg"  class="logo-forLight" alt="image"> -->
+        <h1>BestStyle</h1>
+      </div>
+     </a>
+    </li>
+  <li>
+    <a href="#" class="nav-link">Home</a>
+  </li>
+  <!-- <li>
+    <a href="#" class="nav-link">join</a>
+
+  </li> -->
+  <li>
+    <span class="nav-link theme-toggle">
+      <i class="fa-solid fa-sun"></i>
+      <i class="fa-solid fa-moon"></i>
+    </span>
+  </li>
+</ul>  
+
+  </container>
+  </header>
+
+
+  <main>
+    <section class="contact">
+      <div class="container">
+        <div class="left">
+          <div class="form-wrapper">
+            <div class="contact-heading">
+              <h1>contact us</h1>
+            </div>
+            <form action="" method="post" id="send" class="contact-form">
+              <div class="input-wrap">
+                <input type="text" id="first" class="contact-input" name="first" autocomplete="off" required>
+                <label for="first">first name</label>
+                <i class="fa-solid fa-address-card"></i>
+              </div>
+
+              <div class="input-wrap">
+                <input type="text" id="last" class="contact-input" name="last" autocomplete="off" required>
+                <label for="last">last name</label>
+                <i class="fa-solid fa-address-card"></i>
+              </div>
+
+              <div class="input-wrap w-100">
+                <input type="text" id="email" class="contact-input" name="email" autocomplete="off" required>
+                <label for="email">email</label>
+                <i class="fa-solid fa-envelope"></i>    </div>
+
+
+                <div class="input-wrap textarea w-100">
+                  <textarea name="message" id="message" autocomplete="off"
+                    class="contact-input"></textarea>
+                  <label for="message">message</label>
+                  <i class="fa-solid fa-envelope"></i>   </div>
+
+
+
+<div class="contact-buttons ">
+  <input type="submit" name ="send" value="send"  class="btn">
+  <div id="result"></div>
+
+</div>
+
+
+            </form>
+
+
+          </div>
+
+        </div>
+        <div class="right">
+          <!-- <div class="image-wrapper">
+            <img src="../../../assets/images/banner.jpg" alt="banner" class="img">
+          </div> -->
+          <div class="wave-wrap">
+          </div> 
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <script>
+    const inputs = document.querySelectorAll(".contact-input") ;
+    const toggleBnt = document.querySelector(".theme-toggle") ;
+    const allElements =document.querySelectorAll("*") ;
+
+toggleBnt.addEventListener("click",()=>{
+  document.body.classList.toggle("dark") ;
+
+  allElements.forEach(el => {
+    el.classList.add("transition") ;
+    setTimeout(() => {
+      el.classList.remove("transition") ;
+
+    },1000);
+
+  });
+}
+);
+
+
+    inputs.forEach((ipt) => {
+      ipt.addEventListener("focus",()=> {
+        ipt.parentNode.classList.add("focus");
+        ipt.parentNode.classList.add("not-empty");
+
+      }) ;
+      ipt.addEventListener("blur",()=> {
+        if(ipt.value == "") {   
+        ipt.parentNode.classList.remove("not-empty");
+        }
+        ipt.parentNode.classList.remove("focus");
+
+
+      }) ;
+
+    });
+
+
+
+    
+  </script>
+  
+
+
+
+  <!-- ajax ajax ajax  -->
+
+
+<!-- script ajax  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script>
+      
+        $(document).ready(function() {
+            $('#send').submit(function(event) {
+                event.preventDefault(); // prevent default form submission
+
+                $.ajax({
+                    url: 'contact.php', // replace with your own PHP script URL
+                    method: 'POST',
+                    data: $('#send').serialize(), // serialize form data
+                    dataType: 'html',
+                    success: function(response) {
+                        $('#result').html(response); // display success message
+                        $('#send')[0].reset(); // reset form
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+    
+  
+</body>
+</html>

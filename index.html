@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Website</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+   
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./src/css/index.css">
+
+  <!--
+    - google font link  
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+
+
+
+
+
+
+<style>
+  
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <div class="overlay" data-overlay></div>
+
+  <!--
+    - HEADER
+  -->
+
+  <header>
+
+    <div class="header-main">
+
+      <div class="container">
+
+        <!-- <a href="./index.html" class="header-logo">
+          <img src="./assets/images/logo/logo.svg" alt="Anon's logo" width="100" height="36">
+        </a> -->
+          <a href="./index.html" class="header-logo">
+          <h2>BestStyle</h2>
+        </a>  
+
+
+        <div class="header-search-container">
+
+          <form id="searchbar" action="./src/components/products/search.php" method="post">
+
+            <input type="search" id="search-input" name="search" class="search-field" placeholder="Search BestStyle">
+
+
+            <button type="submit" class="search-btn"   name="btn-search" onclick="document.location='./src/components/products/search.php' ">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </form>
+          
+
+        </div>
+
+        <div class="header-user-actions">
+
+          <button id="login" class="action-btn" onclick="document.location='./src/components/auth/login.html'">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn" onclick="document.location='./src/components/cart/index.html'">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <span id="logout"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+
+          <li class="menu-category">
+            <a href="http://localhost/ecommerce-pfe/index.html" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Categories</a>
+
+            <!-- BEGINING -->
+
+            
+
+            <div class="dropdown-panel">
+
+              <div id="dropdown"></div>
+
+            </div>
+
+            <!-- END -->
+          </li>
+
+          <li class="menu-category">
+
+            <a href="./src/components/products/men.php" class="menu-title">Men's</a>
+
+            <div id="dropdown_sub_men"></div>
+
+            <!-- <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="#">Shirt</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Shorts & Jeans</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Safety Shoes</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Wallet</a>
+              </li>
+
+            </ul> -->
+          </li>
+
+          <li class="menu-category">
+
+            <a href="./src/components/products/women.php" class="menu-title">Women's</a>
+
+            <div id="dropdown_sub_women"></div>
+
+            <!-- <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="#">Dress & Frock</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Earrings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Necklace</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Makeup Kit</a>
+              </li>
+
+            </ul> -->
+          </li>
+
+
+
+
+
+          <li class="menu-category">
+
+            <a href="./src/components/products/test.php" class="menu-title">Products</a>
+
+            <div id="dropdown_sub_women"></div>
+
+            <!-- <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="#">Dress & Frock</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Earrings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Necklace</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Makeup Kit</a>
+              </li>
+
+            </ul> -->
+          </li>
+
+
+
+
+
+
+
+          <li class="menu-category">
+            <a href="./src/components/contact/contact.html" class="menu-title">contact </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <div class="mobile-bottom-navigation">
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn" onclick="document.location='./src/components/cart/index.html'">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" onclick="document.location='./index.html'">
+        <ion-icon name="home-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="grid-outline"></ion-icon>
+      </button>
+
+    </div>
+
+    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="mobile-menu-category-list">
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Home</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="./src/components/auth/login.html" class="menu-title"> Login </a>
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Men's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Shirt</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Shorts & Jeans</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Safety Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Wallet</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Women's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Dress & Frock</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Necklace</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Makeup Kit</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+      <div class="menu-bottom">
+
+        <ul class="menu-category-list">
+
+          <li class="menu-category">
+
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Arabic</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">French</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">EUR &euro;</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+    <div  class="banner">
+
+      <div class="container">
+
+        <div class="slider-container has-scrollbar">
+
+          <div class="slider-item">
+
+            <img src="./assets/images/banner.jpg" alt="women's latest fashion sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending item</p>
+
+              <h2 class="banner-title">Women's latest fashion sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>20</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="./assets/images/banner.jpg" alt="modern sunglasses" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="./assets/images/banner.jpg" alt="new fashion summer sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Sale Offer</p>
+
+              <h2 class="banner-title">New fashion summer sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>29</b>.99
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="./assets/images/banner.jpg" alt="women's latest fashion sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending item</p>
+
+              <h2 class="banner-title">Women's latest fashion sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>20</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Category</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <!-- START -->
+
+            <div id="sidebar"></div>
+
+            <!-- END -->
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+          <!--
+            - PRODUCT FEATURED
+          -->
+
+          <div id="deal_products_fetch"></div>
+
+          <!--
+            - PRODUCT GRID
+          -->
+
+          <div id="sale_products_fetch"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title">testimonial</h2>
+
+            <div class="testimonial-card">
+
+              <img src="./assets/images/testimonial-1.jpg" alt="wissal el garnaoui" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Wissal El GARNAOUI</p>
+
+              <p class="testimonial-title">CEO & Founder</p>
+
+              <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                This is a description
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">25% Discount</p>
+
+              <h2 class="cta-title">Summer collection</h2>
+
+              <p class="cta-text">Starting @ $10</p>
+
+              <button class="cta-btn">Shop now</button>
+
+            </a>
+
+          </div>
+
+
+
+          <!--
+            - SERVICE
+          -->
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over $100</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">UK Orders Only</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over $100</p>
+              
+                </div>
+              
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <!--
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">informations</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="http://localhost/ecommerce-pfe/src/components/contact/about.html#hero" target="_blank"class="footer-nav-link">home</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="http://localhost/ecommerce-pfe/src/components/contact/about.html#about" target="_blank"class="footer-nav-link">about us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="http://localhost/ecommerce-pfe/src/components/contact/about.html#services" target="_blank" class="footer-nav-link">services</a>
+          </li>
+        
+         
+        
+          <li class="footer-nav-item">
+            <a href="http://localhost/ecommerce-pfe/src/components/contact/about.html#projects" target="_blank" class="footer-nav-link">mission</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Services</h2>
+          </li>
+        
+         
+        
+          <li class="footer-nav-item">
+            <a href="./src/components/bestSellers/bestSallers.html" class="footer-nav-link">BestSllers</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="./src/components/newProduct/newProduct.html" class="footer-nav-link">NewProducts</a>
+          </li>
+        
+        
+          
+          <li class="footer-nav-item">
+            <a href="http://localhost/ecommerce-pfe/src/components/contact/contact.html" target="_blank" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              444 State  
+               Rabat,  temara, 12000, morocco
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">0623593882</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">moncef@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="https://www.facebook.com/bahja.crayzy" target="_blank" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://twitter.com/MoncefBahja"   target="_blank"  class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://www.linkedin.com/in/moncef-bahja-315328265/" target="_blank"    class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://www.instagram.com/bahjamoncef/" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+          
+      <div id="google_translate_element">  </div>
+ 
+      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+
+      </script>
+      <script>
+          function googleTranslateElementInit(){
+              new google.translate.TranslateElement(
+{pageLanguage: 'en',
+includedLanguages:'en,fr,ar,de,tr,es',
+pageLanguage:'en' ,
+multilanguagepage:true} ,
+'google_translate_element'
+
+
+              ) ;
+  
+              
+          }
+      </script> 
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Anon</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+    const slider = document.getElementById("slider");
+const images = slider.querySelectorAll(".slider-item");
+let index = 0;
+
+setInterval(() => {
+ images[index].classList.remove("active");
+ index = (index + 1) % images.length;
+ images[index].classList.add("active");
+}, 3000); 
+
+   </script>
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./src/js/index.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- ############################ AJAX ############################ -->
+  <!-- ############################################################## -->
+  <!-- ############################################################## -->
+  <!-- ############################################################## -->
+  <!-- ############################################################## -->
+  <!-- ############################################################## -->
+  <!-- ############################################################## -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+
+    // Trie
+
+    $(document).ready(function() {
+      $.ajax({
+        url: 'http://localhost/ecommerce-pfe/server/trie.php',
+        type: 'POST',
+        data: {
+          // any data you want to send to trie.php can be added here
+        },
+        success: function(response) {
+          // handle the response from trie.php here
+          console.log(response);
+        },
+        error: function(xhr, status, error) {
+          // handle any errors here
+          console.log(error);
+        }
+      });
+    });
+
+    // Check if the user session is still active
+
+    $(document).ready(function(){
+        $.ajax({
+            url: 'http://localhost/ecommerce-pfe/server/role.php',
+            type: 'POST',
+            dataType: 'text',
+            success: function(response) {
+              var output = '';
+                if(response == 'user') {
+                  output += '<button class="action-btn" onclick="document.location=\'http://localhost/ecommerce-pfe/server/logout.php\'">';
+                  output += '<ion-icon name="log-out-outline"></ion-icon>';
+                  output += '</button>';
+                  $('#logout').html(output);
+
+                  const Login = document.getElementById('login');
+                  if (Login != null) { Login.style.display = 'none'; }
+                  
+                } else if(response == 'admin') {
+                  // document.location="http://localhost/ecommerce-pfe/server/dashboard/index.php";
+                }
+            }
+        });
+    });
+
+    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    //Add item to cart
+
+    $(document).ready(function(){
+			$("#add_to_cart").submit(function(e){
+				e.preventDefault();
+				var formData = new FormData(this);
+				$.ajax({
+					url: "http://localhost/ecommerce-pfe/server/add_to_cart.php",
+					type: "POST",
+					data: formData,
+					cache: false,
+					contentType: false,
+					processData: false,
+          mode:'no-cors',
+					success: function(data){
+						if(data == "success"){
+              alert('Item added to cart!');
+						} else {
+              alert('You are not logged in!');
+            }
+          },
+          error: function() {
+            alert("An error occurred while processing your request.");
+					}
+				});
+			});
+		});
+
+    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    // Product Featured
+
+    $.ajax({
+      url: 'http://localhost/ecommerce-pfe/server/deal_products_fetch.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        var output = '';
+
+        output += '<div class="product-featured">';
+        output += '<h2 class="title">Deal of the day</h2>';
+        output += '<div class="showcase-wrapper has-scrollbar">';
+
+        $.each(data, function(index, product) {
+          output += '<div class="showcase-container">';
+          output += '<div class="showcase">';
+          output += '<div class="showcase-banner">';
+          output += '<a href="http://localhost/ecommerce-pfe/src/components/productDetails/Details.php?id='+ product.id +'">';
+          output += '<img src="./assets/images/products/'+ product.image_url +'" alt="'+ product.name +'" class="showcase-img">';
+          output += '</a>';
+          output += '</div>';
+          output += '<div class="showcase-content">';
+          output += '<div class="showcase-actions">';
+          output += '<div class="showcase-rating">';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star-outline"></ion-icon>';
+          output += '<ion-icon name="star-outline"></ion-icon>';
+          output += '</div>';
+          output += '<a href="http://localhost/ecommerce-pfe/src/components/productDetails/Details.php?id='+ product.id +'">';
+          output += '<h3 class="showcase-title">'+ product.name +'</h3>';
+          output += '</a>';
+          output += '<p class="showcase-desc">'+ product.description +'</p>';
+          output += '<div class="price-box">';
+          output += '<p class="price">'+ product.price +'DH</p>';
+          output += '<del>'+ product.discount_price +'DH</del>';
+          output += '</div>';
+          output += '<form id="add_to_cart" action="" method="post">';
+          output += '<input type="hidden" name="product_id" value="'+ product.id +'">';
+          output += '<button type="submit" class="add-cart-btn">add to cart</button>';
+          output += '</form>';
+          output += '<div class="showcase-status">';
+          output += '<div class="wrapper"></div>';
+          output += '</div>';
+          output += '<div class="countdown-box"></div>';
+          output += '</div>';
+          output += '</div>';
+          output += '</div>';
+        });
+
+        output += '</div>';
+        output += '</div>';
+
+        $('#deal_products_fetch').html(output);
+      },
+      error: function() {
+        alert("An error occurred while processing your request.");
+      }
+    });
+
+    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    // Product Grid
+
+    $.ajax({
+      url: 'http://localhost/ecommerce-pfe/server/sale_products_fetch.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        var output = '';
+
+        output += '<div class="product-main">';
+        output += '<h2 class="title">New Products</h2>';
+        output += '<div class="product-grid">';
+
+        $.each(data, function(index, product) {
+          output += '<div class="showcase">';
+          output += '<div class="showcase-banner">';
+         output += '<a href="http://localhost/ecommerce-pfe/src/components/productDetails/Details.php?id='+ product.id +'">';
+          output += '<img src="./assets/images/products/'+ product.image_url +'" alt="'+ product.name +'" width="300" class="product-img default">';
+          output += '<img src="./assets/images/products/'+ product.image_url +'" alt="'+ product.name +'" width="300" class="product-img hover">';
+          output += '</a> ' ;
+          output += '<p class="showcase-badge angle black">sale</p>';
+          output += '<div class="showcase-actions">';
+          output += '<a><button class="btn-action"><ion-icon name="heart-outline"></ion-icon></button></a>';
+          output += '<a href="http://localhost/ecommerce-pfe/src/components/productDetails/Details.php?id='+ product.id +'"><button class="btn-action"><ion-icon name="eye-outline"></ion-icon></button></a>';
+          output += '<a href=""><button class="btn-action"><ion-icon name="bag-add-outline"></ion-icon></button></a>';
+          output += '</div>';
+          output += '</div>';
+          output += '<div class="showcase-content">';
+          output += '<h3>';
+          output += '<a class="showcase-title">'+ product.name +'</a>';
+          output += '</h3>';
+          output += '<div class="showcase-rating">';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star"></ion-icon>';
+          output += '<ion-icon name="star-outline"></ion-icon>';
+          output += '<ion-icon name="star-outline"></ion-icon>';
+          output += '</div>';
+          output += '<div class="price-box">';
+          output += '<p class="price">'+ product.price +'DH</p>';
+          output += '<del>'+ product.discount_price +'DH</del>';
+          output += '</div>';
+          output += '</div>';
+          output += '</div>';
+        });
+
+        output += '</div>';
+        output += '</div>';
+
+        $('#sale_products_fetch').html(output);
+      },
+      error: function() {
+        alert("An error occurred while processing your request.");
+      }
+    });
+
+    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    // Sidebar
+
+    $.ajax({
+    url: 'http://localhost/ecommerce-pfe/server/sidebar.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      var output = '';
+
+      output += '<ul class="sidebar-menu-category-list">';
+
+      $.each(data.categories, function(index, category) {
+        output += '<li class="sidebar-menu-category">';
+        output += '<button class="sidebar-accordion-menu" data-accordion-btn>';
+        output += '<div class="menu-title-flex">';
+        output += '<p class="menu-title">'+ category.name +'</p>'      
+        output += '</div>';
+        output += '<div>';
+        output += '<ion-icon name="add-outline" class="add-icon"></ion-icon>';
+        output += '<ion-icon name="remove-outline" class="remove-icon"></ion-icon>';
+        output += '</div>';
+        output += '</button>';
+
+        output += '<ul class="sidebar-submenu-category-list" data-accordion>';
+
+          $.each(category.subcategories, function(index, subcategory) {
+            output += '<li class="sidebar-submenu-category">';
+              output += '<a href="http://localhost/ecommerce-pfe/src/components/products/category.php?subcategory_id=' + subcategory.id + '" class="sidebar-submenu-title">';
+            output += '<p class="product-name">' + subcategory.name + '</p>';
+            output += '</a>';
+            output += '</li>';
+          });
+
+        output += '</ul>';
+
+        output += '</li>';
+      });
+
+      output += '</ul>';
+
+      $('#sidebar').html(output);
+
+      const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
+      const accordion = document.querySelectorAll('[data-accordion]');
+
+      for (let i = 0; i < accordionBtn.length; i++) {
+
+        accordionBtn[i].addEventListener('click', function () {
+
+          const clickedBtn = this.nextElementSibling.classList.contains('active');
+
+          for (let i = 0; i < accordion.length; i++) {
+
+            if (clickedBtn) break;
+
+            if (accordion[i].classList.contains('active')) {
+
+              accordion[i].classList.remove('active');
+              accordionBtn[i].classList.remove('active');
+
+            }
+
+          }
+
+          this.nextElementSibling.classList.toggle('active');
+          this.classList.toggle('active');
+
+        });
+
+      }
+    },
+    error: function() {
+      alert("An error occurred while processing your request.");
+    }
+  });
+
+   /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    // Search bar
+  
+    // $(document).ready(function() {
+    //   $("#searchbar").submit(function(e) {
+    //     e.preventDefault();
+    //     var query = $('#search-input').val();
+    //     window.location.href = 'http://localhost/ecommerce-pfe/src/components/product/index.html?query=' + encodeURIComponent(query);
+    //   });
+    // });
+
+    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+    // DropDown Panel
+
+    $.ajax({
+    url: 'http://localhost/ecommerce-pfe/server/dropdown.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      var output = '';
+
+      output += '<ul class="dropdown-panel-list">';
+      output += '<li class="menu-title">';
+      output += '<a href="#">Men\'s</a>';
+      output += '</li>';
+      $.each(data.men, function(index, key) {
+        output += '<li class="panel-list-item">';
+        output += '<a href="http://localhost/ecommerce-pfe/src/components/products/categories.php?id='+ key.id +'">'+ key.name +'</a>';
+        output += '</li>';
+      });
+      output += '<li class="panel-list-item"></li>';
+      output += '</ul>';
+      
+      output += '<ul class="dropdown-panel-list">';
+      output += '<li class="menu-title">';
+      output += '<a href="#">Women\'s</a>';
+      output += '</li>';
+      $.each(data.women, function(index, key) {
+        output += '<li class="panel-list-item">';
+          output += '<a href="http://localhost/ecommerce-pfe/src/components/products/categories.php?id='+ key.id +'">'+ key.name +'</a>';
+        output += '</li>';
+      });
+      output += '<li class="panel-list-item"></li>';
+      output += '</ul>';
+
+      $('#dropdown').html(output);
+    },
+    error: function() {
+      alert("An error occurred while processing your request.");
+    }
+  });
+
+  $.ajax({
+    url: 'http://localhost/ecommerce-pfe/server/dropdown_sub.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data) {
+      var output1 = '';
+
+      output1 += '<ul class="dropdown-list">';
+      $.each(data.men, function(index, category_men) {
+        $.each(category_men.subcategories_men, function(index, subcategory_men) {
+          output1 += '<li class="dropdown-item">';
+          output1 += '<a href="#">'+ subcategory_men.name +'</a>';
+          output1 += '</li>';
+        })
+      });
+      output1 += '</ul>';
+
+      var output2 = '';
+      
+      output2 += '<ul class="dropdown-list">';
+      $.each(data.women, function(index, category) {
+        $.each(category.subcategories, function(index, subcategory) {
+          output2 += '<li class="dropdown-item">';
+          output2 += '<a href="#">'+ subcategory.name +'</a>';
+          output2 += '</li>';
+          })
+      });
+      output2 += '</ul>';
+
+      $('#dropdown_sub_men').html(output1);
+      $('#dropdown_sub_women').html(output2);
+    },
+    error: function() {
+      alert("An error occurred while processing your request.");
+    }
+  });
+
+  </script>
+
+  <!-- slider banner -->
+  <script>
+    $(document).ready(function() {
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = $(".slider-item");
+
+    for (i = 0; i < slides.length; i++) {
+      slides.eq(i).hide();
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides.eq(slideIndex - 1).show();
+    setTimeout(showSlides, 5000);
+  }
+});
+
+</script> 
+</body>
+
+</html>

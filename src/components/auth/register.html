@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <section class="container">
+      <header>Register</header>
+      <form id="register-form" action="" class="form form-box">
+        <div class="input-box">
+          <label>Full Name *</label>
+          <input type="text" name="fullname" id="fullname" placeholder="Enter full name" required />
+        </div>
+
+        <div class="input-box">
+          <label>Email Address *</label>
+          <input type="email" name="email" id="email" placeholder="Enter email address" required />
+        </div>
+
+        <div class="input-box">
+            <label>Password *</label>
+            <input type="password" name="password" id="password" placeholder="Enter a new password" required />
+          </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number *</label>
+            <input type="number" name="phone" id="phone" placeholder="Enter phone number" required />
+          </div>
+          <div class="input-box">
+            <label>Birth Date *</label>
+            <input type="date" name="birthdate" id="birthdate" placeholder="Enter birth date" required />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender *</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" value="male" />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" value="female" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" value="prefer not to say" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address *</label>
+          <input type="text" name="address_line_one" id="address_line_one" placeholder="Enter street address *" required />
+          <input type="text" name="address_line_two" id="address_line_two" placeholder="Enter street address line 2" />
+          <div class="column">
+            <div class="select-box">
+              <select name="country">
+                <option hidden>Country *</option>
+                <option value="morocco">Morocco</option>
+                <option value="japan">Japan</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+            <input type="text" name="city" id="city" placeholder="Enter your city *" required />
+          </div>
+          <div class="column">
+            <input type="text" name="region" id="region" placeholder="Enter your region *" required />
+            <input type="number" name="postalcode" id="postalcode" placeholder="Enter postal code *" required />
+          </div>
+        </div>
+        <input type="submit" class="btn" name="submit" value="Register" required>
+        <div class="links">
+            Return to <a href="login.html">Login Page</a>
+        </div>
+      </form>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+		$(document).ready(function(){
+			$("#register-form").submit(function(e){
+				e.preventDefault();
+				var formData = new FormData(this);
+				$.ajax({
+					url: "../../../server/register.php",
+					type: "POST",
+					data: formData,
+					cache: false,
+					contentType: false,
+					processData: false,
+          mode:'no-cors',
+					success: function(data){
+						if(data == "success"){
+							window.location.href = "./login.html";
+						} else {
+                alert("Email Already exists");
+            }
+					}
+				});
+			});
+		});
+
+	</script>
+</body>
+</html>
